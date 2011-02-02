@@ -1,0 +1,30 @@
+<html>
+<head>
+<title>Mozilla Application Permissions</title>
+<script src="/static/jquery-1.4.2.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/static/base.css" />
+</head>
+<body>
+
+<div id="banner">
+Mozilla Application Permissions
+</div>
+
+{% for origin, origin_perms in consent_items.iteritems() %}
+<form name="permissions" action="/consent?origin={{escape(origin)}}" method="POST">
+    <p>Saved permissions for <em>{{origin}}</em></p>
+    <div align="center">
+        <br>
+        {% for p, allowed in origin_perms.iteritems()%}
+             <input type="checkbox" name="{{escape(p)}}" value="null">{{escape(p)}} - {{allowed}}<br>
+        {% end %}
+        <br>
+    </div>
+    <input type="submit" value="Remove selected" />
+</form>
+{% end %}
+
+
+</body>
+</html>
+

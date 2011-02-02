@@ -1,0 +1,78 @@
+<html>
+<head>
+<title>Mozilla Application Services</title>
+<script src="/static/jquery-1.4.2.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/static/base.css" />
+</head>
+<body>
+
+<div id="banner">
+Mozilla Application Services
+</div>
+
+<div id="offer">
+<p>
+  Mozilla Application Services helps you manage your online life by giving you
+  a central location to store your online identity, including the bringing
+  together of all your address books and friend lists, the services you use
+  to share links etc.
+</p>
+
+<p>
+  Once you have set up Mozilla Application Services, web applications that use the
+  Open Web Applications can use these facilities no additional setup required.
+  (You will always be in control of access to your data, of course!)
+</p>
+
+<p>
+  Mozilla will never sell your address lists to anyone or use them to contact
+  your friends without your permission.
+</p>
+
+</div>
+
+<div id="connect">
+<div class="connect_head">
+  To get started, click on one of these services to login via OpenID
+</div>
+
+<div class="service">
+<a href="/login/request?openid_identifier=https%3a//www.google.com/accounts/o8/id"><img src="/static/images/connects/gmail.png"></a>
+</div>
+
+<div class="service">
+<a href="/connect/yahoo?to=/authorize/yahoo"><img src="/static/images/connects/yahoo.png"></a>
+</div>
+
+<div class="service">
+<a href="/connect/twitter"><img src="/static/images/connects/twitter.png"></a>
+</div>
+
+<!--
+<div class="service">
+<a href="/connect/flickr"><img src="/static/images/connects/flickr.png"></a>
+</div>
+-->
+
+
+<script>
+function getParameterByName( name )
+{
+  name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
+  var regexS = "[\\?&]"+name+"=([^&#]*)";
+  var regex = new RegExp( regexS );
+  var results = regex.exec( window.location.href );
+  if( results == null )
+    return "";
+  else
+    return decodeURIComponent(results[1].replace(/\+/g, " "));
+}
+
+$("body").ready(function() {
+  $(".service a").each(function(i, a) {
+    a.setAttribute('href', a.getAttribute('href') + "&return_to=" + getParameterByName('return_to'));
+  });
+});
+</script>
+</body>
+</html>
