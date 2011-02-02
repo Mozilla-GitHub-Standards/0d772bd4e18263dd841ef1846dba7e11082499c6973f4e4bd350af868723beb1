@@ -1,0 +1,6 @@
+[submodule "f1"]
+	path = f1
+	url = git@github.com:mozilla/f1.git
+[submodule "contact-server"]
+	path = contact-server
+	url = git@github.com:mhammond/contact-server.git
