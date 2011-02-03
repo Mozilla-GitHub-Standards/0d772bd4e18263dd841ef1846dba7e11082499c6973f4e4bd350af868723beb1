@@ -1,7 +1,7 @@
 Overview
 =========
 
-Following on from discussions at the Mozilla December 2010 all-hands, I've been experimenting with what F1 would look like in a "browser mediated services" environment.  The intention was to experiment with using pure HTML to create browser-agnostic applications using pure HTML for things like access to your contacts and sharing services.
+Following on from discussions at the Mozilla December 2010 all-hands, I've been experimenting with what F1 would look like in a "browser mediated services" environment.  The intention was to experiment with using pure HTML to create browser-agnostic applications for things like access to your contacts and sharing services.
 
 This experiment is not intended to be used as the basis for a production system - as many short-cuts as possible where taken while still demonstrating the key issues such a system would face.  In other words, it is quite hacky.
 
